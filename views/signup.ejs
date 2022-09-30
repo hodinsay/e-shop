@@ -1,1 +1,60 @@
-<h1>register</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Description -->
+
+    <!-- Meta Title -->
+    <title>E-shop</title>
+
+    <!-- Font Awesome v5 -->
+	<script src="https://kit.fontawesome.com/cd1bf23aec.js" crossorigin="anonymous"></script>
+
+    <!-- enternal CSS Link -->
+    <link rel="stylesheet" href="../public/css/signupStyle.css">
+    
+</head>
+<body>
+    
+    <!-- signupPage -->
+
+    <section id="signupPage">
+        <div class="signupContainer">
+
+            <div class="signupTitles">
+                <h1> e-shop</h1>
+                <h3>Create Account</h3>
+                <p> <a href="/logout"> <i class="fas fa-chevron-left"></i> </a> </p>
+            </div>
+
+            <% if (locals.messages.errors) { %>
+                <% messages.errors.forEach( el => { %>
+                    <div class="alert alert-danger"><%= el.msg %></div>
+                <% }) %>    
+            <% } %>
+            <form action="/signup" method="POST">
+                <label for="userName">Username</label>
+                <input type="text" name="userName" placeholder="Username">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Email">
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Password">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" placeholder="Confirm Password">
+                <input type="submit" class="signupBtn">
+            </form>
+
+            <div class="loginDirect">
+                <h4>Already have an account?</h4>
+                <a href="/login">Log in</a>
+            </div>
+
+        </div>
+
+    </section>
+ 
+</body>
+</html>
